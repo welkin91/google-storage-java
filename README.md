@@ -9,3 +9,5 @@ For the purpose of this assignment, the name of the bucket has been hardcoded in
 
 While deploying the build, make sure that you do have a public bucket by the name of 
 "flacfiles" associated with your storage account.
+
+** In order to run this module, u need to clean(sbt clean), run the process(sbt run) **
