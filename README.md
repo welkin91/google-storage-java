@@ -13,11 +13,11 @@ While deploying the build, make sure that you do have a public bucket by the nam
 ** In order to run this module, you need to have sbt, google cloud sdk and speech_transcripter project running in your system. You should also have a google bucket (global access) by the name of "flacfiles" in your default google cloud account.**
 
 steps:
-  git clone <url>
-  cd google-cloud-storage-java
-  sbt;
-    clean;
-    run 9090;
+  git clone {url} <br>
+  cd google-cloud-storage-java<br>
+  sbt;<br>
+    clean;<br>
+    run 9090;<br>
 
 Make sure you have running your Speech Trancripter before you run this project.
 
