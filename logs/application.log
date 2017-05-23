@@ -1,0 +1,453 @@
+2017-05-23 20:23:03,013 [INFO] from play.api.libs.concurrent.ActorSystemProvider in pool-4-thread-4 - Starting application default Akka system: application
+2017-05-23 20:23:03,098 [INFO] from play.core.server.NettyServer in pool-4-thread-4 - Listening for HTTP on /0:0:0:0:0:0:0:0:9090
+2017-05-23 20:23:25,795 [INFO] from play.api.libs.concurrent.ActorSystemProvider in ForkJoinPool-1-worker-1 - Starting application default Akka system: application
+2017-05-23 20:23:25,880 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-05-23 20:23:25,932 [ERROR] from application in New I/O worker #1 - 
+
+! @7457ekmni - Internal server error, for (GET) [/list/all] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ProvisionException: Unable to provision, see the following errors:
+
+1) Error in custom provider, com.typesafe.config.ConfigException$WrongType: application.conf @ file:/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/application.conf: 6: allowedOrigins has type STRING rather than LIST
+  while locating play.filters.cors.CORSConfigProvider
+  while locating play.filters.cors.CORSConfig
+    for parameter 2 at play.filters.cors.CORSFilterProvider.<init>(CORSModule.scala:22)
+  while locating play.filters.cors.CORSFilterProvider
+  while locating play.filters.cors.CORSFilter
+    for field at Filters.corsFilter(Filters.java:7)
+  while locating Filters
+  while locating play.http.HttpFilters
+    for parameter 0 at play.api.http.JavaHttpFiltersAdapter.<init>(HttpFilters.scala:50)
+  while locating play.api.http.JavaHttpFiltersAdapter
+  while locating play.api.http.HttpFilters
+    for parameter 3 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:197)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+
+1 error]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$class.logExceptionAndGetResult$1(Server.scala:50) [play-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:59) [play-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:57) [play-server_2.11-2.4.2.jar:2.4.2]
+	at scala.util.Either$RightProjection.flatMap(Either.scala:522) [scala-library-2.11.11.jar:na]
+	at play.core.server.Server$class.getHandlerFor(Server.scala:57) [play-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:33) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:139) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:139) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at scala.util.Either.fold(Either.scala:99) [scala-library-2.11.11.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:127) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.3.Final.jar:na]
+	at com.typesafe.netty.http.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:62) [netty-http-pipelining-1.1.4.jar:na]
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) [netty-3.10.3.Final.jar:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty-3.10.3.Final.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error in custom provider, com.typesafe.config.ConfigException$WrongType: application.conf @ file:/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/application.conf: 6: allowedOrigins has type STRING rather than LIST
+  while locating play.filters.cors.CORSConfigProvider
+  while locating play.filters.cors.CORSConfig
+    for parameter 2 at play.filters.cors.CORSFilterProvider.<init>(CORSModule.scala:22)
+  while locating play.filters.cors.CORSFilterProvider
+  while locating play.filters.cors.CORSFilter
+    for field at Filters.corsFilter(Filters.java:7)
+  while locating Filters
+  while locating play.http.HttpFilters
+    for parameter 0 at play.api.http.JavaHttpFiltersAdapter.<init>(HttpFilters.scala:50)
+  while locating play.api.http.JavaHttpFiltersAdapter
+  while locating play.api.http.HttpFilters
+    for parameter 3 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:197)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1025) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051) ~[guice-4.0.jar:na]
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:321) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:316) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.Application$$anonfun$instanceCache$1.apply(Application.scala:234) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.Application$$anonfun$instanceCache$1.apply(Application.scala:234) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.utils.InlineCache.fresh(InlineCache.scala:69) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.utils.InlineCache.apply(InlineCache.scala:55) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.11.jar:na]
+	at play.api.GlobalSettings$class.defaultRequestHandler(GlobalSettings.scala:50) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.GlobalSettings$class.onRouteRequest(GlobalSettings.scala:165) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.DefaultGlobal$.onRouteRequest(GlobalSettings.scala:212) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.GlobalSettings$class.onRequestReceived(GlobalSettings.scala:110) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.DefaultGlobal$.onRequestReceived(GlobalSettings.scala:212) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.GlobalSettingsHttpRequestHandler.handlerForRequest(HttpRequestHandler.scala:183) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$$anonfun$sendHandler$1$1.apply(Server.scala:38) ~[play-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$$anonfun$sendHandler$1$1.apply(Server.scala:37) ~[play-server_2.11-2.4.2.jar:2.4.2]
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:237) ~[scala-library-2.11.11.jar:na]
+	at scala.util.Try$.apply(Try.scala:192) ~[scala-library-2.11.11.jar:na]
+	at scala.util.Success.map(Try.scala:237) ~[scala-library-2.11.11.jar:na]
+	at play.core.server.Server$class.sendHandler$1(Server.scala:37) [play-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:58) [play-server_2.11-2.4.2.jar:2.4.2]
+	... 38 common frames omitted
+Caused by: com.typesafe.config.ConfigException$WrongType: application.conf @ file:/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/application.conf: 6: allowedOrigins has type STRING rather than LIST
+	at com.typesafe.config.impl.SimpleConfig.findKeyOrNull(SimpleConfig.java:159) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.findOrNull(SimpleConfig.java:170) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.find(SimpleConfig.java:184) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.find(SimpleConfig.java:189) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.getList(SimpleConfig.java:252) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.getHomogeneousUnwrappedList(SimpleConfig.java:323) ~[config-1.3.0.jar:na]
+	at com.typesafe.config.impl.SimpleConfig.getStringList(SimpleConfig.java:381) ~[config-1.3.0.jar:na]
+	at play.api.ConfigLoader$$anonfun$8$$anonfun$apply$8.apply(Configuration.scala:1090) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.ConfigLoader$$anonfun$8$$anonfun$apply$8.apply(Configuration.scala:1090) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.ConfigLoader$$anon$3.load(Configuration.scala:1082) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.ConfigLoader$$anon$2.load(Configuration.scala:1074) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.PlayConfig.get(Configuration.scala:939) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.PlayConfig.getOptional(Configuration.scala:951) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.filters.cors.CORSConfig$.fromUnprefixedConfiguration(CORSConfig.scala:82) ~[filters-helpers_2.11-2.4.2.jar:2.4.2]
+	at play.filters.cors.CORSConfig$.fromConfiguration(CORSConfig.scala:78) ~[filters-helpers_2.11-2.4.2.jar:2.4.2]
+	at play.filters.cors.CORSConfigProvider.get$lzycompute(CORSModule.scala:16) ~[filters-helpers_2.11-2.4.2.jar:2.4.2]
+	at play.filters.cors.CORSConfigProvider.get(CORSModule.scala:16) ~[filters-helpers_2.11-2.4.2.jar:2.4.2]
+	at play.filters.cors.CORSConfigProvider.get(CORSModule.scala:15) ~[filters-helpers_2.11-2.4.2.jar:2.4.2]
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:61) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:54) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:132) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:114) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092) ~[guice-4.0.jar:na]
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012) ~[guice-4.0.jar:na]
+	... 59 common frames omitted
+2017-05-23 20:24:05,376 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Shutdown application default Akka system: application
+2017-05-23 20:24:05,551 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-3 - Starting application default Akka system: application
+2017-05-23 20:24:05,567 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-05-23 20:46:33,027 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-65 - Shutdown application default Akka system: application
+2017-05-23 20:46:33,466 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-65 - Starting application default Akka system: application
+2017-05-23 20:46:33,482 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-65 - Application started (Dev)
+2017-05-23 20:48:13,479 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Shutdown application default Akka system: application
+2017-05-23 20:48:13,671 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-6 - Starting application default Akka system: application
+2017-05-23 20:48:13,707 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2017-05-23 20:53:33,948 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-29 - Shutdown application default Akka system: application
+2017-05-23 20:53:34,371 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-29 - Starting application default Akka system: application
+2017-05-23 20:53:34,389 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-29 - Application started (Dev)
+2017-05-23 20:55:01,269 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-05-23 20:55:01,459 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-05-23 20:55:01,474 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-05-23 20:56:57,337 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-05-23 20:56:57,772 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-05-23 20:56:57,786 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-05-23 20:57:24,017 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-8 - Shutdown application default Akka system: application
+2017-05-23 20:57:24,224 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-8 - Starting application default Akka system: application
+2017-05-23 20:57:24,254 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2017-05-23 20:57:41,276 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-7 - Shutdown application default Akka system: application
+2017-05-23 20:57:41,469 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-7 - Starting application default Akka system: application
+2017-05-23 20:57:41,490 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
+2017-05-23 20:58:04,327 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Shutdown application default Akka system: application
+2017-05-23 20:58:04,519 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-9 - Starting application default Akka system: application
+2017-05-23 20:58:04,542 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-05-23 21:07:50,858 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-37 - Shutdown application default Akka system: application
+2017-05-23 21:07:51,310 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-37 - Starting application default Akka system: application
+2017-05-23 21:07:51,331 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-37 - Application started (Dev)
+2017-05-23 21:12:40,109 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Shutdown application default Akka system: application
+2017-05-23 21:12:40,542 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-13 - Starting application default Akka system: application
+2017-05-23 21:12:40,556 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-05-23 21:25:36,156 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-21 - Shutdown application default Akka system: application
+2017-05-23 21:25:36,608 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-21 - Starting application default Akka system: application
+2017-05-23 21:25:36,631 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-21 - Application started (Dev)
+2017-05-23 22:43:31,159 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-133 - Shutdown application default Akka system: application
+2017-05-23 22:43:31,595 [INFO] from play.api.libs.concurrent.ActorSystemProvider in application-akka.actor.default-dispatcher-133 - Starting application default Akka system: application
+2017-05-23 22:43:31,612 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-133 - Application started (Dev)
+2017-05-23 23:04:11,177 [ERROR] from application in application-akka.actor.default-dispatcher-76 - 
+
+! @74589nh0n - Internal server error, for (GET) [/list/all] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[StorageException: connect timed out]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2]
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.11.jar:na]
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:216) [scala-library-2.11.11.jar:na]
+	at scala.util.Try$.apply(Try.scala:192) [scala-library-2.11.11.jar:na]
+	at scala.util.Failure.recover(Try.scala:216) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36) [scala-library-2.11.11.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:44) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:252) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:157) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36) [scala-library-2.11.11.jar:na]
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.11.jar:na]
+Caused by: com.google.cloud.storage.StorageException: connect timed out
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:189) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.list(HttpStorageRpc.java:281) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl$8.call(StorageImpl.java:292) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl$8.call(StorageImpl.java:289) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:93) ~[gax-1.0.0.jar:na]
+	at com.google.api.gax.retrying.RetryingFutureImpl.executeAttempt(RetryingFutureImpl.java:140) ~[gax-1.0.0.jar:na]
+	at com.google.api.gax.retrying.RetryingFutureImpl.access$500(RetryingFutureImpl.java:58) ~[gax-1.0.0.jar:na]
+	at com.google.api.gax.retrying.RetryingFutureImpl$AttemptFutureCallback.onFailure(RetryingFutureImpl.java:176) ~[gax-1.0.0.jar:na]
+	at com.google.api.core.ApiFutures$1.onFailure(ApiFutures.java:52) ~[api-common-1.0.0.jar:na]
+	at com.google.common.util.concurrent.Futures$6.run(Futures.java:1764) ~[guava-19.0.jar:na]
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:456) ~[guava-19.0.jar:na]
+	at com.google.common.util.concurrent.Futures$ImmediateFuture.addListener(Futures.java:153) ~[guava-19.0.jar:na]
+	at com.google.common.util.concurrent.ForwardingListenableFuture.addListener(ForwardingListenableFuture.java:47) ~[guava-19.0.jar:na]
+	at com.google.api.core.ApiFutureToListenableFuture.addListener(ApiFutureToListenableFuture.java:52) ~[api-common-1.0.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1776) ~[guava-19.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1713) ~[guava-19.0.jar:na]
+	at com.google.api.core.ApiFutures.addCallback(ApiFutures.java:47) ~[api-common-1.0.0.jar:na]
+	at com.google.api.gax.retrying.RetryingFutureImpl.setAttemptFuture(RetryingFutureImpl.java:106) ~[gax-1.0.0.jar:na]
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:101) ~[gax-1.0.0.jar:na]
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:49) ~[google-cloud-core-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl.listBlobs(StorageImpl.java:288) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl.list(StorageImpl.java:255) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at business_logic.GoogleCloudStorageService.getAllAudioFiles(GoogleCloudStorageService.java:55) ~[classes/:na]
+	at controllers.UploadController.allFiles(UploadController.java:74) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$15.apply(Routes.scala:138) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$15.apply(Routes.scala:138) ~[classes/:na]
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:494) ~[scala-library-2.11.11.jar:na]
+	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.11.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	... 6 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_111]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_111]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_111]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_111]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_111]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_111]
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668) ~[na:1.8.0_111]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[na:1.8.0_111]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432) ~[na:1.8.0_111]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527) ~[na:1.8.0_111]
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264) ~[na:1.8.0_111]
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367) ~[na:1.8.0_111]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191) ~[na:1.8.0_111]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138) ~[na:1.8.0_111]
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1022) ~[na:1.8.0_111]
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:1020) ~[na:1.8.0_111]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_111]
+	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782) ~[na:1.8.0_111]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1019) ~[na:1.8.0_111]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177) ~[na:1.8.0_111]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153) ~[na:1.8.0_111]
+	at com.google.api.client.http.javanet.NetHttpRequest.execute(NetHttpRequest.java:93) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:972) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:419) ~[google-api-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:352) ~[google-api-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:469) ~[google-api-client-1.21.0.jar:1.21.0]
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.list(HttpStorageRpc.java:273) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	... 60 common frames omitted
+2017-05-23 23:04:53,246 [ERROR] from application in application-akka.actor.default-dispatcher-80 - 
+
+! @7458a0171 - Internal server error, for (GET) [/list/all] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[StorageException: Read timed out]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2]
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.2.jar:2.4.2]
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.2.jar:2.4.2]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.11.jar:na]
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:216) [scala-library-2.11.11.jar:na]
+	at scala.util.Try$.apply(Try.scala:192) [scala-library-2.11.11.jar:na]
+	at scala.util.Failure.recover(Try.scala:216) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:326) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36) [scala-library-2.11.11.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:44) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:252) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:157) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36) [scala-library-2.11.11.jar:na]
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91) [akka-actor_2.11-2.3.11.jar:na]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [scala-library-2.11.11.jar:na]
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.11.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.11.jar:na]
+Caused by: com.google.cloud.storage.StorageException: Read timed out
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:189) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.list(HttpStorageRpc.java:281) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl$8.call(StorageImpl.java:292) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl$8.call(StorageImpl.java:289) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.api.gax.retrying.DirectRetryingExecutor.submit(DirectRetryingExecutor.java:93) ~[gax-1.0.0.jar:na]
+	at com.google.cloud.RetryHelper.runWithRetries(RetryHelper.java:49) ~[google-cloud-core-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl.listBlobs(StorageImpl.java:288) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at com.google.cloud.storage.StorageImpl.list(StorageImpl.java:255) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	at business_logic.GoogleCloudStorageService.getAllAudioFiles(GoogleCloudStorageService.java:55) ~[classes/:na]
+	at controllers.UploadController.allFiles(UploadController.java:74) ~[classes/:2.4.2]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$15.apply(Routes.scala:138) ~[classes/:na]
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$15.apply(Routes.scala:138) ~[classes/:na]
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:494) ~[scala-library-2.11.11.jar:na]
+	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
+	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.11.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.2.jar:2.4.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.11.jar:na]
+	... 6 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_111]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_111]
+	at java.net.SocketInputStream.read(SocketInputStream.java:170) ~[na:1.8.0_111]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_111]
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465) ~[na:1.8.0_111]
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503) ~[na:1.8.0_111]
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973) ~[na:1.8.0_111]
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930) ~[na:1.8.0_111]
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105) ~[na:1.8.0_111]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[na:1.8.0_111]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286) ~[na:1.8.0_111]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[na:1.8.0_111]
+	at sun.net.www.MeteredStream.read(MeteredStream.java:134) ~[na:1.8.0_111]
+	at java.io.FilterInputStream.read(FilterInputStream.java:133) ~[na:1.8.0_111]
+	at sun.net.www.protocol.http.HttpURLConnection$HttpInputStream.read(HttpURLConnection.java:3375) ~[na:1.8.0_111]
+	at com.google.api.client.http.javanet.NetHttpResponse$SizeValidatingInputStream.read(NetHttpResponse.java:169) ~[google-http-client-1.21.0.jar:1.21.0]
+	at java.io.FilterInputStream.read(FilterInputStream.java:133) ~[na:1.8.0_111]
+	at com.google.api.client.util.LoggingInputStream.read(LoggingInputStream.java:57) ~[google-http-client-1.21.0.jar:1.21.0]
+	at org.codehaus.jackson.impl.Utf8StreamParser.loadMore(Utf8StreamParser.java:172) ~[jackson-core-asl-1.9.11.jar:1.9.11]
+	at org.codehaus.jackson.impl.JsonParserBase.loadMoreGuaranteed(JsonParserBase.java:425) ~[jackson-core-asl-1.9.11.jar:1.9.11]
+	at org.codehaus.jackson.impl.Utf8StreamParser._finishString2(Utf8StreamParser.java:1924) ~[jackson-core-asl-1.9.11.jar:1.9.11]
+	at org.codehaus.jackson.impl.Utf8StreamParser._finishString(Utf8StreamParser.java:1905) ~[jackson-core-asl-1.9.11.jar:1.9.11]
+	at org.codehaus.jackson.impl.Utf8StreamParser.getText(Utf8StreamParser.java:276) ~[jackson-core-asl-1.9.11.jar:1.9.11]
+	at com.google.api.client.json.jackson.JacksonParser.getText(JacksonParser.java:76) ~[google-http-client-jackson-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:847) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parse(JsonParser.java:472) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:781) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseArray(JsonParser.java:648) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:740) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parse(JsonParser.java:472) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:781) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseArray(JsonParser.java:648) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:740) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parse(JsonParser.java:472) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parseValue(JsonParser.java:781) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parse(JsonParser.java:382) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonParser.parse(JsonParser.java:355) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonObjectParser.parseAndClose(JsonObjectParser.java:87) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.json.JsonObjectParser.parseAndClose(JsonObjectParser.java:81) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.http.HttpResponse.parseAs(HttpResponse.java:459) ~[google-http-client-1.21.0.jar:1.21.0]
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:469) ~[google-api-client-1.21.0.jar:1.21.0]
+	at com.google.cloud.storage.spi.v1.HttpStorageRpc.list(HttpStorageRpc.java:273) ~[google-cloud-storage-1.0.0.jar:1.0.0]
+	... 46 common frames omitted

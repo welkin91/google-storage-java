@@ -1,0 +1,18 @@
+run 8080
+run 9036
+sbt clean
+sbt --help
+sbt help
+sbt man
+sbt -v
+clean
+idea
+play "idea with-sources=yes"
+run
+clean
+run
+clean
+run
+run 9090
+clean
+run 9090

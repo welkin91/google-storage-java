@@ -1,0 +1,57 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @* Here's where we render the page title `String`. *@
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
+
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"
+            type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("../../public/javascripts/storage_functions.js")"
+            type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.js" 
+            type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="ui top attached demo menu">
+            <a class="item">
+                <i class="sidebar icon"></i>
+                Menu
+            </a>
+        </div>
+        <div class="ui bottom attached segment pushable">
+            <div class="ui inverted labeled icon left inline vertical sidebar menu uncover visible">
+                <a class="item" id='upload_button'>
+                    <i class="upload icon"></i>
+                    Upload a file
+                </a>
+                <a class="item" id="show_button">
+                    <i class="block layout icon"></i>
+                    View all files
+                </a>
+            </div>
+            <div class="pusher" style="margin-left: -9%; margin-top: 2%">
+                <div>
+
+                    @content
+
+                </div>
+                <div class="ui segment loader_segment hidden loading" style="min-height: 300px; width: 80%; display: none">
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/conf/application.conf,/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/conf/logback.xml,/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/conf/routes,/Users/aneesha.bahukhandi/PLAY/File-Upload-Translation/target/scala-2.11/classes/routes)[0m

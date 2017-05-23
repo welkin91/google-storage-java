@@ -1,0 +1,52 @@
+@(error: models.ErrorDescriptor)(success: String)
+
+@main("") {
+ <div class="ui segment" style="width: 80%">
+ <div class="ui ignored info message" style="text-align: center">
+ <b>Please Upload any new files to the Bucket!</b> Please Visit <a href="http://localhost:9000/list/all">
+   <code>"View all files"</code>
+  </a> for their Srcipts!
+ </div>
+ <div class="ui basic segment" style="width: 33%; margin-left: 33%">
+  <div class="container" id='upload_div'>
+   <div class="ui card raised">
+    <div class="content">
+     <div class="ui small feed">
+      <h3>
+        Please Upload here
+      </h3>
+      <br>
+      @*<button class="ui button browse">Browse</button>*@
+      <div class="ui action input">
+       <input type="text" placeholder="Browse Path" id="input_field" value="">
+       <button class="ui button browse yellow basic">Browse</button>
+      </div>
+      <p>
+       @helper.form(action = routes.UploadController.upload, 'enctype -> "multipart/form-data") {
+       <input type="file" class="browse_hidden" name="audioFileDescriptor" style="display: none">
+
+       <p>
+         <button class="ui button hidden hidden_upload_btn" type="submit" style="display: none">Upload</button>
+       </p>
+      }
+     </div>
+    </div>
+    <div class="extra content">
+     <button class="ui button green" id="upload_submit">Upload</button>
+    </div>
+   </div>
+  </div>
+  </div>
+  @if(error != null) {
+   <div class="ui ignored error message" style="text-align: center">
+    Error Occurred:  @error.getMessage
+   </div>
+  }
+  @if(success != null) {
+   <div class="ui ignored positive message" style="text-align: center">
+    @success
+   </div>
+  }
+ </div>
+}
+<t></t>
